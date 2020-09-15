@@ -1,0 +1,495 @@
+/**
+ * @name BoostDiscord
+ * @version 0.1
+ * @description Tweaks little UI problems and fixes alot of problems with discord's css.
+ * @author NextWorks
+ * @authorId 541684766060314632
+ */
+
+ 
+
+/*Custom Gradient Names*/
+
+@import url("https://discord-custom-gradient-names.github.io/gradient/dist/main.min.css");
+/*Discord Font*/
+
+@import url('https://nfld99.github.io/Better-Discord/Source_Code/Addons/Use_Fonts/DiscordFont.css');
+/*Radial Status by Gibbu*/
+
+@import url("https://gibbu.github.io/BetterDiscord-Themes/RadialStatus/base.css");
+/*Modified theme By NextWorks (Theme Based powered by Hunam6)*/
+
+@import url(https://raw.githack.com/Hunam6/DiscordNow/master/source.css);
+.theme-dark, .theme-light, :root {
+  --background-primary: #202020 !important;
+  --background-secondary: #181818 !important;
+  --background-secondary-alt: #131313 !important;
+  --background-tertiary: #121212 !important;
+  --background-accent: #141414 !important;
+  --background-floating: #0e0e0e !important;
+  --background-modifier-hover: rgba(255, 255, 255, 0.01) !important;
+  --background-modifier-active: rgba(255, 255, 255, 0.03) !important;
+  --background-modifier-selected: rgba(255, 255, 255, 0.04) !important;
+  --background-modifier-accent: hsla(0, 0%, 100%, 0.06) !important;
+  --channeltextarea-background: var(--background-accent) !important;
+  --deprecated-card-bg: rgba(0, 0, 0, 0.2) !important;
+  --deprecated-card-editable-bg: rgba(0, 0, 0, 0.1) !important;
+  --deprecated-text-input-bg: var(--background-tertiary) !important;
+  --deprecated-text-input-border: var(--background-floating) !important;
+  --deprecated-text-input-border-disabled: var(--background-tertiary) !important;
+  --activity-card-background: var(--background-primary) !important;
+  --channels-default: #9f9f9f !important;
+  --text-muted: #b6b6b6 !important;
+  --text-normal: #fbfbfb !important;
+  --interactive-normal: #c8c8c8 !important;
+  --interactive-hover: #dcddde !important;
+  --interactive-active: #fff !important;
+  --interactive-muted: #747474 !important;
+  --header-primary: white !important;
+  --header-secondary: #c9c9c9 !important;
+  --toast-background: var(--background-primary) !important;
+  --toast-header: var(--background-tertiary) !important;
+  --toast-contents: var(--background-secondary) !important;
+  --toast-box-shadow: rgba(0, 0, 0, 0.2) !important;
+  --toast-border: var(--background-tertiary) !important;
+  --bd-blue: var(--background-primary) !important;
+  --bd-blue-hover: var(--background-accent) !important;
+  --bd-blue-active: var(--background-accent) !important;
+  --blurple: #1d1d1d !important;
+}
+
+:root {
+  --rs-small-spacing: 2px;
+  /* Spacing between avatar and status */
+  --rs-large-spacing: 3px;
+  /* Spacing between avatar and status for user popouts & modals/profiles */
+  --rs-width: 2px;
+  /* Width/thickness of status border */
+  --rs-avatar-shape: 50%;
+  /* 50% for round - 0% for square */
+  --rs-online-color: #43b581;
+  /* Color for online status */
+  --rs-idle-color: #faa61a;
+  /* Color for idle status */
+  --rs-dnd-color: #f04747;
+  /* Color for dnd status */
+  --rs-offline-color: #636b75;
+  /* Color for offline status */
+  --rs-streaming-color: #643da7;
+  /* Color for streaming status */
+  --rs-invisible-color: #747f8d;
+  /* Color for invisible status - Note this will only show for your own invisibility */
+}
+
+.headerPlaying-j0WQBV, .topSectionPlaying-1J5E4n {
+  z-index: 1;
+  background-image: url(https://cdn.naila.bot/Discord/playing-background.svg), linear-gradient(to top right, #1db954, #44fc9d);
+}
+
+.headerSpotify-zpWxgT, .topSectionSpotify-1lI0-P {
+  z-index: 1;
+  background-image: url(https://cdn.naila.bot/Discord/playing-background.svg), linear-gradient(to top right, #1db954, #44fc9d);
+}
+
+/*Profile Modal - User Badges move up when hovered over!*/
+
+.header-QKLPzZ .headerInfo-30uryT .flex-1xMQg5 div {
+  transition: 0.2s;
+}
+
+.header-QKLPzZ .headerInfo-30uryT .flex-1xMQg5 div:hover {
+  transition: 0.2s;
+  transform: translateY(-0.75px);
+}
+
+/*Removed profile notes*/
+
+.userInfoSection-2acyCx+.userInfoSection-2acyCx {
+  border: 0px
+}
+
+div.userInfoSection-2acyCx {
+  padding: 10px 0px
+}
+
+.userInfoSectionHeader-CBvMDh {
+  display: none
+}
+
+.note-QfFU8y {
+  display: none
+}
+
+/*Fix Avatars in Search (and now, pinned messages)*/
+
+.searchResultMessage-1fxgXh.hit-1fVM9e>div>.contents-2mQqc9 img, div[id^=pinned-messages-] .contents-2mQqc9 img {
+  top: 15px
+}
+
+/* Hides channel topic */
+
+.title-3qD0b->.children-19S4PO>.divider-3FBTu8, .title-3qD0b->.children-19S4PO>.topic-TCb_qw {
+  opacity: 0;
+}
+
+.title-3qD0b->.toolbar-1t6TWx>a {
+  display: none;
+}
+
+/* Makes search box size fit with the member list */
+
+.searchBar-3dMhjb {
+  width: 210px;
+}
+
+/* Makes search box size fit with search results */
+
+.focused-31_ccS .searchBar-3dMhjb, .open-6_Y_aH .searchBar-3dMhjb {
+  width: 390px;
+}
+
+.wordmark-2iDDfm:after {
+  content: "BoostDiscord V1.0";
+  color: White !important;
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute;
+  width: 4000px;
+  top: 5px;
+  padding-left: -3px;
+  font-family: "Discord";
+}
+
+.wordmark-2iDDfm>svg {
+  width: 0px;
+}
+
+/*Cleaner status picker*/
+
+#status-picker .separator-2I32lJ, #status-picker .description-2L932D {
+  display: none;
+}
+
+#status-picker .focused-3afm-j {
+  background: linear-gradient(45deg, #2b45a2, #7289da);
+  border-radius: 25px;
+  padding: 3px;
+}
+
+#status-picker .focused-3afm-j#status-picker-online {
+  background: linear-gradient(45deg, #21583f, #43b581);
+  border-radius: 25px;
+  padding: 3px;
+}
+
+#status-picker .focused-3afm-j#status-picker-idle {
+  background: linear-gradient(45deg, #915c03, #faa61a);
+  border-radius: 25px;
+  padding: 3px;
+}
+
+#status-picker .focused-3afm-j#status-picker-dnd {
+  background: linear-gradient(45deg, #aa0e0e, #f04747);
+  border-radius: 25px;
+  padding: 3px;
+}
+
+#status-picker .focused-3afm-j#status-picker-invisible {
+  background: linear-gradient(45deg, #3a4047, #747f8d);
+  border-radius: 25px;
+  padding: 3px;
+}
+
+/*Remove rich presence icon*/
+
+.activity-2Gy-9S svg {
+  display: none;
+}
+
+/*Role Pills*/
+
+.role-2irmRk {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  padding: 5px;
+}
+
+.roleCircle-3xAZ1j::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  opacity: .2;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/*Bottom*/
+
+.footer-1fjuF6 {
+  border-top: none;
+}
+
+/*Minified Member List (Animates)*/
+
+/*WARNING USE THIS ONLY IF YOU HAVE A GOOD CPU*/
+
+:root {
+  --hover-animation-speed: 0.35s;
+  --seperator-color: var(--background-accent);
+}
+
+.membersWrap-2h-GB4 {
+  min-width: unset;
+  width: 50px;
+  justify-content: right;
+}
+
+.members-1998pB {
+  transition: transform var(--hover-animation-speed);
+}
+
+.membersWrap-2h-GB4:hover .members-1998pB {
+  transform: translateX(-190px);
+}
+
+.membersWrap-2h-GB4 .membersGroup-v9BXpm::after {
+  content: '';
+  width: 30px;
+  height: 2px;
+  border-radius: 50px;
+  background: unset;
+  background-color: var(--seperator-color);
+  position: absolute;
+  left: -36px;
+  top: 29px;
+  margin-left: 0px;
+}
+
+.membersWrap-2h-GB4 .members-1998pB .member-3-YXUe {
+  background-color: unset;
+  margin-left: 0px;
+  transition: margin-left var(--hover-animation-speed);
+}
+
+.membersWrap-2h-GB4:hover .members-1998pB .member-3-YXUe {
+  margin-left: 8px;
+}
+
+.membersWrap-2h-GB4:hover .membersGroup-v9BXpm {
+  transform: translateX(-6px);
+}
+
+.membersWrap-2h-GB4 .membersGroup-v9BXpm {
+  cursor: default;
+  transform: translateX(45px);
+  transition: transform var(--hover-animation-speed);
+  overflow: visible;
+}
+
+.menu-3sdvDG {
+  background: rgba(0, 0, 0, .3);
+  border-radius: 8px;
+  box-shadow: none
+}
+
+.menu-3sdvDG:before {
+  content: "";
+  position: absolute;
+  backdrop-filter: blur(50px) contrast(.8);
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.labelContainer-1BLJti {
+  font-size: 14px;
+  padding: 4px 8px;
+  min-height: 18px;
+  border-radius: 5px;
+}
+
+.colorDefault-2K3EoJ {
+  color: #fff;
+}
+
+.colorDefault-2K3EoJ.focused-3afm-j {
+  background: rgb(10, 132, 225);
+}
+
+.colorDefault-2K3EoJ:active:not(.hideInteraction-1iHO1O) {
+  background: rgb(0, 112, 205);
+}
+
+.separator-2I32lJ {
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.disabled-1WRMNA {
+  opacity: .2;
+}
+
+.button-F9qN4n {
+  background: none;
+  backdrop-filter: brightness(1.3);
+}
+
+/*Removed Button "Speak message on the context menu*/
+
+.item-1tOPte {
+  margin: 0;
+}
+
+#message-actions-tts, #message-tts {
+  display: none;
+}
+
+/*Removed button "Invite To Server" on the context menu*/
+
+.colorDefault-2K3EoJ[id="user-context-invite-to-server"] {
+  display: none;
+}
+
+/*Removed button "Call" on the context menu*/
+
+.colorDefault-2K3EoJ[id="user-context-call"] {
+  display: none;
+}
+
+/*separate the channel list from the message box*/
+
+.sidebar-2K8pFh, .chat-3bRxxu, .container-1D34oG, .container-3Mxszk, .applicationStore-1pNvnv {
+  border-radius: 15px 15px 0 0 !important;
+}
+
+.chat-3bRxxu, .container-1D34oG, .scrollerInner-2YIMLh, .container-3Mxszk, .applicationStore-1pNvnv {
+  position: relative;
+  left: 5px;
+}
+
+.membersWrap-2h-GB4, .chatContent-a9vAAp, .title-3qD0b-, .nowPlayingColumn-2sl4cE, .peopleColumn-29fq28>.scrollerBase-289Jih, .container-1r6BKw {
+  position: relative;
+  right: 5px;
+}
+
+/*Fix avatar in search and pinned message*/
+
+.searchResultMessage-1fxgXh.hit-1fVM9e>div>.contents-2mQqc9 img, div[id^="pinned-messages-"] .contents-2mQqc9 img {
+  top: 15px;
+}
+
+/* Modern Call dock*/
+
+.wrapper-3EGhDO {
+  background-color: var(--background-secondary);
+  border-radius: 25px;
+  padding: 0px;
+}
+
+.colorable-1bkp8v.white-3GPOIp, .colorable-1bkp8v.white-3GPOIp .centerIcon-2G6o-T {
+  color: currentColor;
+}
+
+.colorable-1bkp8v.primary-3NQg8g, .colorable-1bkp8v.primary-3NQg8g.active-1QRrIS, .colorable-1bkp8v.primary-3NQg8g:hover, .colorable-1bkp8v.white-3GPOIp, .centerButton-3CaNcJ, .colorable-1bkp8v.white-3GPOIp.active-1QRrIS, .colorable-1bkp8v.white-3GPOIp:hover, .colorable-1bkp8v.red-33-Lnk {
+  background: none !important;
+}
+
+/* Make autocomplete scrollable */
+
+.autocomplete-1vrmpx {
+  max-height: calc(100vh - 120px);
+  overflow-y: scroll;
+}
+
+.autocomplete-1vrmpx::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-color: var(--scrollbar-thin-thumb);
+  min-height: 40px;
+}
+
+.autocomplete-1vrmpx::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/*reveal spoiler on hover*/
+
+.spoilerText-3p6IlD.hidden-HHr2R9:hover .inlineContent-3ZjPuv {
+  opacity: 1;
+  border-radius: 3px;
+  background-color: #4a4d53;
+}
+
+/*Modern Chat Buttons*/
+
+.container-3baos1 .noWrap-3jynv6 {
+  width: 0px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .5s ease-in-out;
+}
+
+.container-3baos1:hover .noWrap-3jynv6 {
+  width: 100px;
+  opacity: 1;
+  pointer-events: all;
+}
+
+/*Modern Bot Tags*/
+
+.botTagRegular-2HEhHi {
+  background: rgba(114, 137, 218, 0.1);
+  color: #7289da;
+}
+
+.botTagRegular-2HEhHi:hover {
+  background: #7289da;
+  color: #fff;
+}
+
+/*Custom Home Button*/
+
+.listItem-2P_4kh:nth-child(1) .listItemWrapper-3X98Pc .wrapper-25eVIn svg foreignObject .wrapper-1BJsBx .childWrapper-anI2G9 .homeIcon-tEMBK1 {
+  background: url('https://i.imgur.com/6BtrIgj.png');
+  /* image url */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  margin-top: -2px;
+  animation: Home 1.5s infinite ease-in-out;
+}
+
+.homeIcon-tEMBK1 path {
+  fill: transparent;
+}
+
+.header-3ZP1MY {
+  color: var(white);
+}
+
+@keyframes Home {
+  0% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg) scale(1.01);
+  }
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+/* fixed the bottom server list*/
+
+.wrapper-1Rf91z {
+  height: calc(100% - 8px)
+}
